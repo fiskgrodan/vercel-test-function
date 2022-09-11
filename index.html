@@ -23,11 +23,44 @@
         margin-block-end: 0;
         padding: 20px;
       }
+
+      /* unvisited link */
+      a:link {
+        color: rgb(247, 135, 220);
+      }
+
+      /* visited link */
+      a:visited {
+        color: rgb(171, 250, 171);
+      }
+
+      /* mouse over link */
+      a:hover {
+        color: rgb(134, 241, 245);
+      }
+
+      /* selected link */
+      a:active {
+        color: rgb(211, 131, 248);
+      }
     </style>
   </head>
   <body>
     <main>
-      <h1>Go to <a href="/api/hello">/api/hello</a></h1>
+      <h1>Go to <a id="link" href="/api/hello">/api/hello</a></h1>
+      <p id="message"></p>
     </main>
+
+    <script>
+      document
+        .getElementById("link")
+        .addEventListener("click", async (event) => {
+          event.preventDefault();
+
+          const message = await (await fetch("/api/hello")).json();
+
+          document.getElementById("message").textContent = messsage || "";
+        });
+    </script>
   </body>
 </html>
