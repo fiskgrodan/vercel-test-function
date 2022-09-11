@@ -57,7 +57,7 @@
         .addEventListener("click", async (event) => {
           event.preventDefault();
 
-          const message = await (await fetch("/api/hello")).json();
+          const message = await (await fetch("/api/hello")).text();
 
           document.getElementById("message").textContent = messsage || "";
         });
