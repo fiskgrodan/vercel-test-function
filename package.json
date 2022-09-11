@@ -1,0 +1,15 @@
+{
+  "name": "test-function",
+  "version": "1.0.0",
+  "description": "Testing Vercel server functions with a simple example.",
+  "license": "ISC",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "devDependencies": {
+    "vercel": "^28.2.4"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
